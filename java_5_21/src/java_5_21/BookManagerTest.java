@@ -7,7 +7,7 @@ import java_5_21.BookManager.BookInfo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BookMana gerTest {
+class BookManagerTest {
 	
 	private BookInfo bookDB;
 
