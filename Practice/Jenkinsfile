@@ -65,7 +65,7 @@ pipeline{
 				// JUnit 5 테스트 실행을 위한 classpath 설정
 
 				def classpath = "classes/java_5_21/BookTest.java — select-class=com.example.project.CalculatorTests"
-				sh 'cd /Users/nimo/Practice/.settings'
+				// sh 'cd /Users/nimo/Practice/.settings'
 				sh 'java -jar /Users/nimo/.brew/Cellar/openjdk@11/11.0.23/libexec/openjdk.jdk/Contents/Home — class-path=classes/java_5_21/BookTest.java — select-class=BookTest.java'
 				sh 'java -jar /Users/nimo/.brew/Cellar/openjdk@11/11.0.23/libexec/openjdk.jdk/Contents/Home -cp . --scan-classpath > test_results.txt'
 
