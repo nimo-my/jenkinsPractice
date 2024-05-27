@@ -39,24 +39,29 @@
 pipeline{
 	agent any
 	stages {
-		stage('Checkout'){
+		stage('Compile'){
 			steps {
 				// 소스 코드를 버전 관리 시스템에서 체크아웃
-				git url: 'https://github.com/nimo-my/jenkinsPractice.git', branch: 'main'
+				// git url: 'https://github.com/nimo-my/jenkinsPractice.git', branch: 'main'
 
-				sh javac -encoding UTF-8 -d output /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java
+				sh javac -encoding UTF-8 -d target/classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java
 			}
-
-			stage('Test') { 
+			
+		}
+		stage('Test') { 
 			steps {
-				echo "testing..."
+				
+				// JUnit 5 테스트 실행을 위한 classpath 설정
+				def classpath = "target/classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
+				// JUnit 5 테스트 실행
+				bat 'java -cp target/classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
+
 				// JUnit 5 테스트 실행을 위한 classpath 설정
 				// def classpath = "path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
 				// // JUnit 5 테스트 실행
 				// bat 'java -cp Practice/src/output;lib/; path/to/eclipse/plugins/junit-
 				// platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
 			} 
-			}
 		}
 	}
 }
