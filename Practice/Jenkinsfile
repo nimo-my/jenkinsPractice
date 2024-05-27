@@ -85,7 +85,7 @@ pipeline{
 				script{
 					// JUnit 5 테스트 실행
 				sh 'java -cp classes:/Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path > test_results.txt'
-				cat 'test_results.txt'
+				sh 'cat test_results.txt'
 				}
 			}
 		}
@@ -95,9 +95,9 @@ pipeline{
 	post {
 		always{
 			archiveArtifacts 'test_results.txt'
-		success {
-		echo 'Build and test succeeded'
-		} 
+		// success {
+		// echo 'Build and test succeeded'
+		// } 
 		}
 		
 	}
