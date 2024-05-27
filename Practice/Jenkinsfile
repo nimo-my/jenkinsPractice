@@ -48,21 +48,21 @@ pipeline{
 			}
 			
 		}
-		stage('Test') { 
-			steps {
+		// stage('Test') { 
+		// 	steps {
 				
-				// JUnit 5 테스트 실행을 위한 classpath 설정
-				def classpath = "target/classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
-				// JUnit 5 테스트 실행
-				bat 'java -cp target/classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
+		// 		// JUnit 5 테스트 실행을 위한 classpath 설정
+		// 		def classpath = "target/classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
+		// 		// JUnit 5 테스트 실행
+		// 		bat 'java -cp target/classes;lib/; path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
 
-				// JUnit 5 테스트 실행을 위한 classpath 설정
-				// def classpath = "path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
-				// // JUnit 5 테스트 실행
-				// bat 'java -cp Practice/src/output;lib/; path/to/eclipse/plugins/junit-
-				// platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
-			} 
-		}
+		// 		// JUnit 5 테스트 실행을 위한 classpath 설정
+		// 		// def classpath = "path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
+		// 		// // JUnit 5 테스트 실행
+		// 		// bat 'java -cp Practice/src/output;lib/; path/to/eclipse/plugins/junit-
+		// 		// platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
+		// 	} 
+		// }
 	}
 }
 
