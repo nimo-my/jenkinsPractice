@@ -66,8 +66,8 @@ pipeline{
 
 				def classpath = "classes/java_5_21/BookTest.java — select-class=com.example.project.CalculatorTests"
 				// sh 'cd /Users/nimo/Practice/.settings'
-				sh 'java -jar /Users/nimo/.brew/Cellar/openjdk@11/11.0.23/libexec/openjdk.jdk/Contents/Home — class-path=classes/java_5_21/BookTest.java — select-class=BookTest.java'
-				sh 'java -jar /Users/nimo/.brew/Cellar/openjdk@11/11.0.23/libexec/openjdk.jdk/Contents/Home -cp . --scan-classpath > test_results.txt'
+				sh 'java -jar /Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar — class-path=classes/java_5_21/BookTest.java — select-class=BookTest.java'
+				sh 'java -jar /Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar -cp . --scan-classpath > test_results.txt'
 
 				// def classpath = "classes; User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar"
 				// // JUnit 5 테스트 실행
