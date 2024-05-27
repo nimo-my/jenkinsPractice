@@ -42,6 +42,7 @@ pipeline{
 		stage('stage 1'){
 			steps {
 				echo "Hello World"
+				sh javac -encoding UTF-8 -d -Practice/src/java_5_21 . Practice/src/java_5_21/Book.java
 			}
 		}
 	}
