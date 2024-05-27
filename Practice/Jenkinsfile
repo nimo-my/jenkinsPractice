@@ -63,10 +63,14 @@ pipeline{
 			steps {
 				script{
 				// JUnit 5 테스트 실행을 위한 classpath 설정
-				def classpath = "classes;lib/; User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar"
-				// JUnit 5 테스트 실행
-				bat 'java -cp classes;lib/; User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
-				}
+
+				sh 'java -jar User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar --classpath build/test --scan-classpath'
+				sh 'java -jar User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar -cp build/test --scan-classpath > test_results.txt'
+
+				// def classpath = "classes; User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar"
+				// // JUnit 5 테스트 실행
+				// bat 'java -cp classes; User/nimo/Downloads/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt'
+				// }
 				// JUnit 5 테스트 실행을 위한 classpath 설정
 				// def classpath = "path/to/eclipse/plugins/junit-platform-console-standalone- 1.7.1.jar"
 				// // JUnit 5 테스트 실행
