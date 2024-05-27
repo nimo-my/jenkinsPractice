@@ -85,6 +85,7 @@ pipeline{
 				script{
 					// JUnit 5 테스트 실행
 				sh 'java -cp classes:/Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path > test_results.txt'
+				echo 'test_results.txt'
 				}
 			}
 		}
