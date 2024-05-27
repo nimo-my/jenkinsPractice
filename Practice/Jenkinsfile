@@ -39,15 +39,24 @@
 pipeline{
 	agent any
 	stages {
-		stage('Compile'){
+		stage('Checkout') {
 			steps {
-				// 소스 코드를 버전 관리 시스템에서 체크아웃
-				// git url: 'https://github.com/nimo-my/jenkinsPractice.git', branch: 'main'
-
-				sh javac -encoding UTF-8 -d target/classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java
-			}
-			
+			// 소스코드 체크아웃 
+			checkout scm
+			} 
 		}
+
+		// stage('Compile'){
+		// 	steps {
+		// 		// 소스 코드를 버전 관리 시스템에서 체크아웃
+		// 		// git url: 'https://github.com/nimo-my/jenkinsPractice.git', branch: 'main'
+
+		// 		sh javac -encoding UTF-8 -d target/classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java
+		// 	}
+			
+		// }
+
+		
 		// stage('Test') { 
 		// 	steps {
 				
