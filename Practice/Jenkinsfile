@@ -43,7 +43,7 @@ pipeline{
 		}
 		
 
-		stage('Test01 - BookTest (JUnit test)') { 
+		stage('Test') { 
 			steps {
 				script{
 
@@ -51,37 +51,26 @@ pipeline{
 				// JUnit 5 테스트 실행을 위한 classpath 설정
 				def classpath = "java -jar /Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar"
 				sh 'java -cp classes:/Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path'
-				// sh 'cd /Users/nimo/Desktop/jenkinsPractice/Practice/src/app'
 				sh 'pwd'
 				
 				} 
-				dir("Practice/src/app") {
+				dir ("Practice/src/app") {
 					sh 'javac PerformanceTest.java'
 					sh 'java PerformanceTest > junit_test_results.txt'
-					// windows code here
-					echo "Test01 finished!!! :D"
 				}
+
+				echo "Test01 finished!!! :D"
 
 			}
 		}
 
-		// stage('Test02 - Performance Test (in main function)') { 
-		// 	steps {
-		// 		script{
-				
-		// 		// // mac code here
-
-		// 		// // windows code here
-				
-		// 		echo "Test02 finished!!! :D"
-		// 		}
-		// 	}
-		// }
 	}
 
 	post {
 		always{
-			archiveArtifacts 'junit_test_results.txt'
+			dir ("Practice/src/app") {
+				archiveArtifacts 'junit_test_results.txt'
+			}
 			
 		// success {
 		// echo 'Build and test succeeded'
