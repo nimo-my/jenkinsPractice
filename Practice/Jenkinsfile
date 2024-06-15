@@ -17,7 +17,7 @@ pipeline{
 				script{
 					// make Book class into classes folder (in workspace)
 					sh 'mkdir -p classes'
-					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java'
+					sh 'javac -encoding UTF-8 -d classes Practice/src/app/Book.java'
 
 					echo "Pre-Build finished!!! :D"
 				}
@@ -33,8 +33,8 @@ pipeline{
 
 				// mac code here
 				// JUnit 5 테스트 실행을 위한 classpath 설정
-				def classpath = "java -jar /Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar"
-				sh 'java -cp classes:/Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path'
+				def classpath = "java -jar Practice/.settings/junit-platform-console-standalone-1.7.1.jar"
+				sh 'java -cp classes:Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path'
 				sh 'pwd'
 				
 				} 
