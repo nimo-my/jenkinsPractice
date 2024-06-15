@@ -53,14 +53,14 @@ pipeline{
 				sh 'java -cp classes:/Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path'
 				// sh 'cd /Users/nimo/Desktop/jenkinsPractice/Practice/src/app'
 				sh 'pwd'
-				sh 'cd Practice/src/app'
-				sh 'pwd'
-				sh 'javac PerformanceTest.java'
-				sh 'java PerformanceTest > junit_test_results.txt'
-				// windows code here
-				echo "Test01 finished!!! :D"
 				
 				} 
+				dir("Practice/src/app") {
+					sh 'javac PerformanceTest.java'
+					sh 'java PerformanceTest > junit_test_results.txt'
+					// windows code here
+					echo "Test01 finished!!! :D"
+				}
 
 			}
 		}
