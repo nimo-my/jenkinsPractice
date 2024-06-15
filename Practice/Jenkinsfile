@@ -17,6 +17,7 @@ pipeline{
 				script{
 					// mac code here
 					sh 'mkdir -p classes'
+					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java'
 					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/PerformanceTest.java'
 
 					// windows code here
