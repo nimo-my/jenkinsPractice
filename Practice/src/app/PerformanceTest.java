@@ -368,4 +368,6 @@ class Book {
         System.out.println("testSearchBook 실행 시간: " + durationTestSearchBook + " ms");
         System.out.println("search_bs 실행 시간: " + durationSearchBs + " ms");
     }
+
+    test_Book.runTest();
 }

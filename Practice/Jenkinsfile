@@ -55,7 +55,7 @@ pipeline{
 
 				// windows code here
 				echo "Test01 finished!!! :D"
-				sh 'cat junit_test_results.txt'
+				
 				} 
 
 			}
