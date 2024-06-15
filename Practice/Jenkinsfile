@@ -56,10 +56,6 @@ pipeline{
 			dir ("Practice/src/app") {
 				archiveArtifacts 'junit_test_results.txt'
 			}
-			
-		success {
-			echo 'Build and test succeeded'
-			} 
 
 		}
 		
