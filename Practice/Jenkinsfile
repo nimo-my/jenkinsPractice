@@ -9,7 +9,7 @@ pipeline{
         //     steps {
 		// 		script{
 		// 		// The below will clone your repo and will be checked out to master branch by default.
-		// 		// git credentialsId: 'nimo-my', url: 'https://github.com/nimo-my/SWProj.git'
+		// 		// git credentialsId: 'nimo-my', url: 'https://github.com/nimo-my/jenkinsPractice/Practice.git'
 		// 		// Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
 		// 		sh "ls -lart ./*" 
 		// 		// List all branches in your repo. 
@@ -32,7 +32,7 @@ pipeline{
 				script{
 					// mac code here
 					sh 'mkdir -p classes'
-					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/SWProj/src/Book.java'
+					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/PerformanceTest.java'
 
 					// windows code here
 					echo "Build finished!!! :D"
@@ -49,8 +49,8 @@ pipeline{
 
 				// mac code here
 				// JUnit 5 테스트 실행을 위한 classpath 설정
-				def classpath = "java -jar /Users/nimo/Desktop/SWProj/.settings/junit-platform-console-standalone-1.7.1.jar"
-				sh 'java -cp classes:/Users/nimo/Desktop/SWProj/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path > junit_test_results.txt'
+				def classpath = "java -jar /Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar"
+				sh 'java -cp classes:/Users/nimo/Desktop/jenkinsPractice/Practice/.settings/junit-platform-console-standalone-1.7.1.jar org.junit.platform.console.ConsoleLauncher --scan-class-path > junit_test_results.txt'
 				sh 'cat junit_test_results.txt'
 
 				// windows code here
