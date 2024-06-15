@@ -369,5 +369,10 @@ class Book {
         System.out.println("search_bs 실행 시간: " + durationSearchBs + " ms");
     }
 
-    test_Book.runTest();
+    public static void main(String[] args)
+    {
+        PerformanceTest perf = new PerformanceTest();
+
+        perf.runTest();
+    }
 }
