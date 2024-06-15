@@ -1,15 +1,13 @@
-package java_5_21;
+package app;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import java_5_21.Book.Calculator;
 
 public class BookManager {
 	
 	public BookInfo BookInfo;
 	
-	public class BookInfo {
+	public static class BookInfo {
 		int id; 
 		String title;
 		String author;
@@ -55,6 +53,7 @@ public class BookManager {
 			info.title = title;
 			info.author = author;
 			info.publishedYear = publishedYear;
+			System.out.println("Book{id : " + id +  ", title : " + title + ", author : " + author + ", published Year : " + publishedYear + "} 도서가 추가되었습니다.");
 			
 			bookDB.add(info);
 			
@@ -97,12 +96,14 @@ public class BookManager {
 			return (1);
 
 		}
-		
 	}
 
-	
-
-	
-	
+	public static void main(String[] args)
+	{
+		BookInfo new_book = new BookInfo();
+		System.out.println("testing!!11");
+		new_book.testAddBook(1, "자바 기초", "Jane", 2021);
+		System.out.println("testing!!22");
+	}
 
 }
