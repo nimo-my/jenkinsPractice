@@ -18,7 +18,7 @@ pipeline{
 					// mac code here
 					sh 'mkdir -p classes'
 					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/Book.java'
-					sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/PerformanceTest.java'
+					// sh 'javac -encoding UTF-8 -d classes /Users/nimo/Desktop/jenkinsPractice/Practice/src/app/PerformanceTest.java'
 
 					// windows code here
 					echo "Build finished!!! :D"
